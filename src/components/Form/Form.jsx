@@ -54,4 +54,6 @@ export class Form extends Component {
     );
   }
 }
-Form.propTypes = {};
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

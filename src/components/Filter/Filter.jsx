@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { nanoid } from "nanoid";
 
 export const Filter = ({ onChange }) => {
   return (
@@ -10,4 +9,6 @@ export const Filter = ({ onChange }) => {
     </label>
   );
 };
-Filter.propTypes = {};
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
