@@ -21,25 +21,24 @@ class App extends Component {
       })
     ) {
       alert(`${data.name} is already in contacts`);
-    } else {
-      this.setState({
+    } 
+      return this.setState((prevState)=>({
         contacts: [
           { name: data.name, id: nanoid(), number: data.number },
-          ...this.state.contacts,
+          ...prevState,
         ],
-      });
-    }
+      }));
+    
   };
   addFilter = (e) => {
     this.setState({ filter: e.target.value });
   };
   findContact = () => {
-    const filterContact = this.state.contacts.filter((contact) => {
+    return this.state.contacts.filter((contact) => {
       return contact.name
         .toLocaleLowerCase()
         .includes(this.state.filter.toLocaleLowerCase());
     });
-    return filterContact;
   };
   deleteContact = (id) => {
     this.setState((prevState) => ({
